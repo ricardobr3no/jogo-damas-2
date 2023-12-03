@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://02ph2jf6oaus"]
+
+[ext_resource type="Texture2D" uid="uid://b74uqjoa8ofjw" path="res://asset/dama_branca.png" id="1_7ub1a"]
+[ext_resource type="Script" path="res://scripts/dama.gd" id="1_ks0id"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oc2l5"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfg0e"]
+size = Vector2(10, 1100)
+
+[node name="dama_w" type="CharacterBody2D"]
+position = Vector2(152, 288)
+input_pickable = true
+script = ExtResource("1_ks0id")
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_oc2l5")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7ub1a")
+
+[node name="Detector" type="Area2D" parent="." groups=["detect"]]
+monitoring = false
+
+[node name="shape" type="CollisionShape2D" parent="Detector"]
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_nfg0e")
+
+[node name="shape2" type="CollisionShape2D" parent="Detector"]
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_nfg0e")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckvf8ylkwj4wb"]
+
+[ext_resource type="Texture2D" uid="uid://d2hcpvehfokd4" path="res://asset/tabuleiro.png" id="1_jeq4c"]
+[ext_resource type="Script" path="res://game.gd" id="1_tt0f3"]
+[ext_resource type="PackedScene" uid="uid://mluik0wkkq0s" path="res://scenes/coordenate.tscn" id="3_cdqc5"]
+[ext_resource type="PackedScene" uid="uid://02ph2jf6oaus" path="res://scenes/dama_w.tscn" id="4_0qoi7"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_tt0f3")
+
+[node name="BG" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+position = Vector2(239.5, 359)
+scale = Vector2(4, 6.064)
+texture = ExtResource("1_jeq4c")
+metadata/_edit_lock_ = true
+
+[node name="tabuleiro" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(239.5, 375.5)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("1_jeq4c")
+metadata/_edit_lock_ = true
+
+[node name="coordenates" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Coordenate" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(33, 168)
+
+[node name="Coordenate2" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(152, 168)
+
+[node name="Coordenate3" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(270, 168)
+
+[node name="Coordenate4" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(389, 168)
+
+[node name="Coordenate5" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(92, 228)
+
+[node name="Coordenate6" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(211, 228)
+
+[node name="Coordenate7" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(329, 228)
+
+[node name="Coordenate8" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(448, 228)
+
+[node name="Coordenate9" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(33, 287)
+
+[node name="Coordenate10" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(152, 287)
+
+[node name="Coordenate11" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(270, 287)
+
+[node name="Coordenate12" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(389, 287)
+
+[node name="Coordenate13" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(92, 347)
+
+[node name="Coordenate14" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(211, 347)
+
+[node name="Coordenate15" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(329, 347)
+
+[node name="Coordenate16" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(448, 347)
+
+[node name="Coordenate17" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(33, 404)
+
+[node name="Coordenate18" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(152, 404)
+
+[node name="Coordenate19" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(270, 404)
+
+[node name="Coordenate20" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(389, 404)
+
+[node name="Coordenate21" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(92, 464)
+
+[node name="Coordenate22" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(211, 464)
+
+[node name="Coordenate23" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(329, 464)
+
+[node name="Coordenate24" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(448, 464)
+
+[node name="Coordenate25" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(33, 523)
+
+[node name="Coordenate26" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(152, 523)
+
+[node name="Coordenate27" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(270, 523)
+
+[node name="Coordenate28" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(389, 523)
+
+[node name="Coordenate29" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(92, 583)
+
+[node name="Coordenate30" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(211, 583)
+
+[node name="Coordenate31" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(329, 583)
+
+[node name="Coordenate32" parent="coordenates" instance=ExtResource("3_cdqc5")]
+position = Vector2(448, 583)
+
+[node name="pieces" type="Node" parent="."]
+
+[node name="dama_w" parent="pieces" instance=ExtResource("4_0qoi7")]
+
+[node name="dama_w2" parent="pieces" instance=ExtResource("4_0qoi7")]
+position = Vector2(270, 288)

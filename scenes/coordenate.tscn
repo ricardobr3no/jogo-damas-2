@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://mluik0wkkq0s"]
+
+[ext_resource type="Script" path="res://scripts/coordenate.gd" id="1_j1dic"]
+[ext_resource type="Texture2D" uid="uid://cd7dput1s06q5" path="res://asset/coordernate.svg" id="2_2vbij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybfty"]
+size = Vector2(1000, 1000)
+
+[node name="Coordenate" type="Area2D"]
+position = Vector2(33, 405)
+scale = Vector2(0.0504257, 0.0482949)
+monitorable = false
+script = ExtResource("1_j1dic")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.000976562)
+shape = SubResource("RectangleShape2D_ybfty")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-39.6624, 0.000488281)
+scale = Vector2(1, 0.970699)
+texture = ExtResource("2_2vbij")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event" flags=18]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited" flags=18]
