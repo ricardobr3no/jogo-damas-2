@@ -6,15 +6,24 @@ var speed := 350.0
 var is_selected := false
 var can_move := false
 
+var distance_axis = 0.95
+
+func _ready() -> void:
+	$Detector.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	for axi in $Detector.get_children():
+		axi.position *= distance_axis
 
 
 func _physics_process(_delta: float) -> void:
 	# detector and is_select
 	if is_selected:
+		$Detector.process_mode = Node.PROCESS_MODE_INHERIT
 		$Detector.monitorable = true
 	else:
+		$Detector.process_mode = Node.PROCESS_MODE_DISABLED
 		$Detector.monitorable = false
-	
+		
 	# click-move
 	if can_move:
 		if Global.target_position != Vector2.ZERO:
@@ -30,7 +39,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and is_selected:
 		can_move = true
 		is_selected = false
-		print(is_selected)
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

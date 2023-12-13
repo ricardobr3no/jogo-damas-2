@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5wv81h1ct86e"]
+
+[ext_resource type="Texture2D" uid="uid://dxvikthur73m0" path="res://icon.svg" id="1_0h1g4"]
+[ext_resource type="Script" path="res://scenes/obj.gd" id="2_601jv"]
+[ext_resource type="PackedScene" uid="uid://mluik0wkkq0s" path="res://scenes/coordenate.tscn" id="2_v1ls6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpr1b"]
+size = Vector2(10, 500)
+
+[node name="teste" type="Node2D"]
+
+[node name="Coordenate" parent="." instance=ExtResource("2_v1ls6")]
+position = Vector2(252, 314)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(105, 314)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("2_601jv")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(144, 284)
+texture = ExtResource("1_0h1g4")
+
+[node name="obj" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(144, 284)
+
+[node name="shape_left_up" type="CollisionShape2D" parent="CharacterBody2D/obj"]
+position = Vector2(-250, -250)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lpr1b")
+
+[node name="shape_left_down" type="CollisionShape2D" parent="CharacterBody2D/obj"]
+position = Vector2(-250, 250)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_lpr1b")
+
+[node name="shape_right_up" type="CollisionShape2D" parent="CharacterBody2D/obj"]
+position = Vector2(250, -250)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_lpr1b")
+
+[node name="shape_right_down" type="CollisionShape2D" parent="CharacterBody2D/obj"]
+position = Vector2(250, 250)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_lpr1b")

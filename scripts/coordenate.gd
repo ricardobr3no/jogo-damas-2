@@ -16,7 +16,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	# atualiza target_position qunado clica emcima
 	if event.is_action_pressed("click") and not ocupado:
 		Global.target_position = global_position
-
+		ocupado = true
 
 
 func _on_area_entered(area: Area2D) -> void:
